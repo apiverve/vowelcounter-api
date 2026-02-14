@@ -1,23 +1,25 @@
 openapi: 3.0.4
 info:
   title: Vowel Counter
-  description: Vowel Counter analyzes text to count vowels and consonants, providing detailed breakdowns and percentages for linguistic analysis.
+  description: >-
+    Vowel Counter analyzes text to count vowels and consonants, providing
+    detailed breakdowns and percentages for linguistic analysis.
   termsOfService: https://apiverve.com/terms/
   contact:
     name: APIVerve Support
     email: hello@apiverve.com
     url: https://apiverve.com/contact
-  version: 1.0.9
+  version: 1.0.0
 externalDocs:
   description: Learn more about APIVerve
   url: https://docs.apiverve.com?utm_source=openapi
 servers:
-- url: https://api.apiverve.com/
+  - url: https://api.apiverve.com/
 paths:
   /v1/vowelcounter:
     post:
       summary: Count Vowels and Consonants
-      description: Vowel Counter analyzes text to count vowels and consonants, providing detailed breakdowns and percentages for linguistic analysis.
+      description: Count vowels and consonants in text with detailed breakdown
       operationId: vowelcounter
       parameters: []
       responses:
@@ -35,11 +37,11 @@ paths:
                     type: string
                     description: error
                   data:
-                    type: string
+                    type: object
                     description: data
               example:
                 status: ok
-                error: 
+                error: null
                 data:
                   vowels: 31
                   consonants: 58
@@ -58,7 +60,7 @@ paths:
         '404':
           description: Requested resource was not found
         '500':
-          description: A server error has occured, try again later
+          description: A server error has occurred, try again later
       requestBody:
         required: true
         content:
@@ -69,11 +71,8 @@ paths:
                 text:
                   type: string
                   description: Text to analyze (max 50,000 characters)
-                  example: The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once.
               required:
-              - text
-              example:
-                text: The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once.
+                - text
 components:
   securitySchemes:
     api_key:
@@ -81,4 +80,8 @@ components:
       name: x-api-key
       in: header
 security:
-- api_key: []
+  - api_key: []
+sampleRequest:
+  text: >-
+    The quick brown fox jumps over the lazy dog. This pangram contains every
+    letter of the alphabet at least once.
