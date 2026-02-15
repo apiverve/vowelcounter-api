@@ -1,1 +1,3 @@
-from .apiClient import VowelcounterAPIClient
+from .apiClient import VowelcounterAPIClient, VowelcounterAPIClientError
+
+__all__ = ['VowelcounterAPIClient', 'VowelcounterAPIClientError']
