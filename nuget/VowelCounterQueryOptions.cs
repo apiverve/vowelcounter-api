@@ -12,7 +12,6 @@ namespace APIVerve.API.VowelCounter
     {
         /// <summary>
         /// Text to analyze (max 50,000 characters)
-        /// Example: Hello World
         /// </summary>
         [JsonProperty("text")]
         public string Text { get; set; }
