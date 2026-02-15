@@ -1,17 +1,20 @@
 [project]
 name = "apiverve-vowelcounter"
-version = "1.1.12"
+version = "1.1.13"
 authors = [
   { name="APIVerve", email="hello@apiverve.com" },
 ]
 description = "Vowel Counter analyzes text to count vowels and consonants, providing detailed breakdowns and percentages for linguistic analysis."
-keywords = ["vowel counter", "consonant counter", "text analysis", "letter frequency", "vowel percentage"]
+keywords = []
 readme = "README.md"
-requires-python = ">=3.12"
+requires-python = ">=3.7"
+license = "MIT"
+dependencies = [
+    "requests>=2.25.0"
+]
 classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Intended Audience :: Developers",
     "Intended Audience :: Financial and Insurance Industry",
