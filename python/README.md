@@ -228,8 +228,9 @@ from apiverve_vowelcounter.apiClient import VowelcounterAPIClient
 
 api = VowelcounterAPIClient("[YOUR_API_KEY]")
 
+query = { "text": "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once." }
+
 try:
-    query = { "text": "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once." }
     result = api.execute(query)
     print(result)
 finally:
