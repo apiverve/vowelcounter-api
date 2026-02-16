@@ -1,6 +1,6 @@
 {
   "name": "@apiverve/vowelcounter",
-  "version": "1.1.13",
+  "version": "1.1.14",
   "description": "Vowel Counter analyzes text to count vowels and consonants, providing detailed breakdowns and percentages for linguistic analysis.",
   "main": "index.js",
   "types": "index.d.ts",
