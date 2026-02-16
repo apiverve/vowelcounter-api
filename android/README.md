@@ -26,7 +26,7 @@ Add the dependency:
 
 ```gradle
 dependencies {
-    implementation 'com.github.apiverve:vowelcounter-api:1.1.13'
+    implementation 'com.github.apiverve:vowelcounter-api:1.1.14'
 }
 ```
 
@@ -47,7 +47,7 @@ VowelCounterAPIClient client = new VowelCounterAPIClient("YOUR_API_KEY");
 try {
     // Prepare request parameters
     Map<String, Object> parameters = new HashMap<>();
-    parameters.put("text", "Hello World");
+    parameters.put("text", "The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once.");
 
     // Execute the request
     APIResponse response = client.execute(parameters);
