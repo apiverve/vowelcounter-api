@@ -4,30 +4,42 @@ declare module '@apiverve/vowelcounter' {
     secure?: boolean;
   }
 
+  /**
+   * Describes fields the current plan does not unlock. Locked fields arrive as null
+   * in `data`; `locked_fields` names them, using dot paths for nested fields.
+   * Absent when the plan unlocks everything.
+   */
+  export interface PremiumInfo {
+    message: string;
+    upgrade_url: string;
+    locked_fields: string[];
+  }
+
   export interface vowelcounterResponse {
     status: string;
     error: string | null;
     data: VowelCounterData;
     code?: number;
+    premium?: PremiumInfo;
   }
 
 
   interface VowelCounterData {
-      vowels:              number;
-      consonants:          number;
-      totalLetters:        number;
-      vowelPercentage:     number;
-      consonantPercentage: number;
+      vowels:              number | null;
+      consonants:          number | null;
+      totalLetters:        number | null;
+      vowelPercentage:     number | null;
+      consonantPercentage: number | null;
       vowelBreakdown:      VowelBreakdown;
-      textLength:          number;
+      textLength:          number | null;
   }
   
   interface VowelBreakdown {
-      a: number;
-      e: number;
-      i: number;
-      o: number;
-      u: number;
+      a: number | null;
+      e: number | null;
+      i: number | null;
+      o: number | null;
+      u: number | null;
   }
 
   export default class vowelcounterWrapper {
