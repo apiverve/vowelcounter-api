@@ -20,7 +20,7 @@ namespace APIVerve.Examples
         private static readonly string API_URL = "https://api.apiverve.com/v1/vowelcounter";
 
         /// <summary>
-        /// Make a GET request to the Vowel Counter API
+        /// Make a POST request to the Vowel Counter API
         /// </summary>
         static async Task<JsonDocument> CallVowelCounterAPI()
         {
@@ -29,7 +29,13 @@ namespace APIVerve.Examples
                 using var client = new HttpClient();
                 client.DefaultRequestHeaders.Add("x-api-key", API_KEY);
 
-                var response = await client.GetAsync(API_URL);
+                // Request body
+                var requestBody &#x3D; new { text &#x3D; &quot;The quick brown fox jumps over the lazy dog. This pangram contains every letter of the alphabet at least once.&quot; };
+
+                var jsonContent = JsonSerializer.Serialize(requestBody);
+                var content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+                var response = await client.PostAsync(API_URL, content);
 
                 // Check if response is successful
                 response.EnsureSuccessStatusCode();
