@@ -25,47 +25,62 @@ namespace APIVerve.API.VowelCounter
 
         [JsonProperty("data")]
         public Data Data { get; set; }
+
+        [JsonProperty("premium")]
+        public Premium Premium { get; set; }
     }
 
     public partial class Data
     {
         [JsonProperty("vowels")]
-        public long Vowels { get; set; }
+        public long? Vowels { get; set; }
 
         [JsonProperty("consonants")]
-        public long Consonants { get; set; }
+        public long? Consonants { get; set; }
 
         [JsonProperty("totalLetters")]
-        public long TotalLetters { get; set; }
+        public long? TotalLetters { get; set; }
 
         [JsonProperty("vowelPercentage")]
-        public double VowelPercentage { get; set; }
+        public double? VowelPercentage { get; set; }
 
         [JsonProperty("consonantPercentage")]
-        public double ConsonantPercentage { get; set; }
+        public double? ConsonantPercentage { get; set; }
 
         [JsonProperty("vowelBreakdown")]
         public VowelBreakdown VowelBreakdown { get; set; }
 
         [JsonProperty("textLength")]
-        public long TextLength { get; set; }
+        public long? TextLength { get; set; }
     }
 
     public partial class VowelBreakdown
     {
         [JsonProperty("a")]
-        public long A { get; set; }
+        public long? A { get; set; }
 
         [JsonProperty("e")]
-        public long E { get; set; }
+        public long? E { get; set; }
 
         [JsonProperty("i")]
-        public long I { get; set; }
+        public long? I { get; set; }
 
         [JsonProperty("o")]
-        public long O { get; set; }
+        public long? O { get; set; }
 
         [JsonProperty("u")]
-        public long U { get; set; }
+        public long? U { get; set; }
+    }
+
+    public partial class Premium
+    {
+        [JsonProperty("message")]
+        public string Message { get; set; }
+
+        [JsonProperty("upgrade_url")]
+        public Uri UpgradeUrl { get; set; }
+
+        [JsonProperty("locked_fields")]
+        public string[] LockedFields { get; set; }
     }
 }
