@@ -18,7 +18,7 @@ servers:
 paths:
   /v1/vowelcounter:
     post:
-      summary: Count Vowels and Consonants
+      summary: Vowel Counter
       description: Count vowels and consonants in text with detailed breakdown
       operationId: vowelcounter
       parameters: []
