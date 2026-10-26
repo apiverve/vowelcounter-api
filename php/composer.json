@@ -1,7 +1,7 @@
 {
     "name": "apiverve/vowelcounter",
     "description": "Vowel Counter analyzes text to count vowels and consonants, providing detailed breakdowns and percentages for linguistic analysis.",
-    "version": "1.2.2",
+    "version": "1.2.3",
     "type": "library",
     "license": "MIT",
     "authors": [
